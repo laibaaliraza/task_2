@@ -32,9 +32,11 @@ if [ "$i_tag" = true ]; then       #incremental backup
   dest_dir="incremental-$date"
   prev_dir=$(ls -dt incremental-* 2>/dev/null | head -n 1)
    if [ -n "$prev_dir" ]; then
-     rsync -a --link-dest="../$prev_dir" "$dir/" "$dest_dir/" || exit 2
+     rsync -a --no-o --no-g --omit-dir-times --link-dest="../$prev_dir" "$dir/" "$dest_dir/" || exit 2
+
    else
-     rsync -a "$dir/" "$dest_dir/" || exit 2
+    rsync -a --no-o --no-g --omit-dir-times "$dir/" "$dest_dir/" || exit 2
+
    fi
  else
    dest_dir="full-$date"    #do full backup(-i was not used)
