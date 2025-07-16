@@ -53,7 +53,7 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
   git add .
   git commit -m "Backup for $date"
   git tag "$git_backup"
-  git push origin enhanced_backup
+  git push origin enhanced-backup
   git push origin "$git_backup"
 else
   echo "Not a git repository, skipping version control steps."
