@@ -1,7 +1,2 @@
-#Run backup daily at 1:00 am
+0 1 * * * /full/path/to/search_backup.sh -d /home/laiba/data -i -r
 
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-#Change directory to task_2(folder)
-0 1 * * *  cd /home/laiba/task_2  && ./search_backup.sh -d ./data -i -r
-
-# 0min, 1am, every-day, every-month, every-day of week
